@@ -22,26 +22,6 @@ This is a simple yet effective Daily Routine application built using React Nativ
   - `react-navigation` for handling navigation between screens.
   - Other utility libraries as needed.
 
-## Project Structure
-
-```plaintext
-.
-├── assets/                 # Static assets like images and fonts
-├── components/             # Reusable UI components
-│   ├── RoutineItem.js      # Component for displaying individual routine items
-│   ├── TodayRoutine.js     # Component for displaying today's routines
-│   └── AllRoutines.js      # Component for listing all routines
-├── db/                     # SQLite database setup
-│   └── routineDB.js        # Database connection and CRUD operations
-├── screens/                # Screen components for navigation
-│   ├── HomeScreen.js       # Home screen displaying both today’s and all routines
-│   ├── AddRoutineScreen.js # Screen for adding new routines
-│   └── RoutineDetails.js   # Screen for routine details and editing
-├── App.js                  # Main app component
-├── README.md               # Project documentation
-└── package.json            # Project dependencies and scripts
-```
-
 ## Installation
 
 1. Clone the repository:
