@@ -1,50 +1,117 @@
-# Welcome to your Expo app 👋
+# Daily Routine Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a simple yet effective Daily Routine application built using React Native and Expo Framework. The app allows users to manage their daily routines with two key features:
 
-## Get started
+- **Today Routine:** Displays the list of tasks for the current day.
+- **All Routines:** Lists all routines in chronological order for easy management and tracking.
 
-1. Install dependencies
+## Features
+
+- Add, update, delete, and view daily routines.
+- View today's routines in a separate tab.
+- View all routines sorted by date in chronological order.
+- Persistent storage using SQLite to ensure routines are saved even after closing the app.
+
+## Tech Stack
+
+- **Expo:** A framework and platform for universal React applications.
+- **React Native:** For building mobile applications.
+- **SQLite:** A lightweight database used for local data storage within the app.
+- **npm Packages:**
+  - `react-native-sqlite-storage` for SQLite database integration.
+  - `react-navigation` for handling navigation between screens.
+  - Other utility libraries as needed.
+
+## Project Structure
+
+```plaintext
+.
+├── assets/                 # Static assets like images and fonts
+├── components/             # Reusable UI components
+│   ├── RoutineItem.js      # Component for displaying individual routine items
+│   ├── TodayRoutine.js     # Component for displaying today's routines
+│   └── AllRoutines.js      # Component for listing all routines
+├── db/                     # SQLite database setup
+│   └── routineDB.js        # Database connection and CRUD operations
+├── screens/                # Screen components for navigation
+│   ├── HomeScreen.js       # Home screen displaying both today’s and all routines
+│   ├── AddRoutineScreen.js # Screen for adding new routines
+│   └── RoutineDetails.js   # Screen for routine details and editing
+├── App.js                  # Main app component
+├── README.md               # Project documentation
+└── package.json            # Project dependencies and scripts
+```
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/daily-routine-app.git
+   cd daily-routine-app
+   ```
+
+2. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Start the application using Expo:
 
    ```bash
-    npx expo start
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Usage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 1. Add a Routine
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Navigate to the **Add Routine** screen.
+- Enter the title, description, and time for the routine.
+- Save the routine to add it to the database.
 
-## Get a fresh project
+### 2. View Today's Routine
 
-When you're ready, run:
+- The home screen will automatically display routines for the current day under **Today’s Routine**.
+
+### 3. View All Routines
+
+- All routines can be accessed from the **All Routines** section, sorted in chronological order.
+
+### 4. Edit or Delete a Routine
+
+- Tap on any routine to view details.
+- From here, you can either edit the routine or delete it.
+
+## Tech Stack
+
+The following npm packages are required for this project:
+
+- [Expo](https://expo.dev/)
+- [React Native](https://reactnative.dev/)
+- [SQLite](https://github.com/andpor/react-native-sqlite-storage)
+- [React Navigation](https://reactnavigation.org/)
+
+Install them by running:
 
 ```bash
-npm run reset-project
+npm install react-native-sqlite-storage @react-navigation/native
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Roadmap
 
-## Learn more
+### Future Features
 
-To learn more about developing your project with Expo, look at the following resources:
+- Notifications for upcoming routines.
+- Search functionality for routines.
+- Categorization of routines (e.g., Work, Personal).
+- Dark mode support.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Contributing
 
-## Join the community
+Contributions are welcome! If you find any issues or want to add features, feel free to open an issue or submit a pull request.
 
-Join our community of developers creating universal apps.
+## License
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
