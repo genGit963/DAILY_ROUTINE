@@ -1,19 +1,26 @@
 import React from "react";
-import { Image, StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import {
+  getCurrentDay,
+  getCurrentMonthName,
+  getFullDate,
+  getTodayWeekday,
+} from "@/utils/date";
 
 export default function HomeScreen() {
+  const describeToday: string = `${getTodayWeekday()}, ${getCurrentDay()} ${getCurrentMonthName()}`;
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
       headerImage={
         <>
-          <ThemedText type="title">My Today</ThemedText>
-          <ThemedText>Date</ThemedText>
+          <ThemedText type="heading1">My Today</ThemedText>
+          <ThemedText>{describeToday}</ThemedText>
         </>
       }
       requiredHeader={true}
