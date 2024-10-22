@@ -1,3 +1,4 @@
+import React from "react";
 import type { PropsWithChildren, ReactElement } from "react";
 import { StyleSheet, useColorScheme } from "react-native";
 import Animated, {
@@ -9,18 +10,18 @@ import Animated, {
 
 import { ThemedView } from "@/components/ThemedView";
 
-const HEADER_HEIGHT = 250;
+const HEADER_HEIGHT = 120;
 
 type Props = PropsWithChildren<{
-  requiredHeader: boolean;
-  headerImage: ReactElement;
+  requiredHeader?: boolean;
+  headerImage?: ReactElement;
   headerBackgroundColor: { dark: string; light: string };
 }>;
 
 export default function ParallaxScrollView({
   children,
   requiredHeader = false,
-  headerImage,
+  headerImage = <></>,
   headerBackgroundColor,
 }: Props) {
   const colorScheme = useColorScheme() ?? "light";
@@ -73,7 +74,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    height: 100,
+    paddingTop: "14%",
+    paddingHorizontal: 32,
+    height: 120,
     overflow: "hidden",
   },
   content: {
